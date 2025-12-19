@@ -14,7 +14,7 @@
 
 - #### 1.2 你的开发板长什么样？
   
-  ![](C:\Users\lpg01\AppData\Roaming\marktext\images\2025-12-15-14-28-09-image.png)
+  ![](./images/2025-12-15-14-28-09-image.png)
   
   Keysking STM32学习套件板子上集成了多种外设：RGB LED（彩色灯）、按键、旋转编码器、温湿度传感器（AHT20）、OLED显示屏、电位器、无源蜂鸣器、继电器、USB Type-C等。参考 “学习板引脚功能说明.pdf” 中的编号图。
   
@@ -44,17 +44,17 @@
   
   Keil MDK（Microcontroller Development Kit）是写C代码、编译、调试的IDE。下载官网最新版。安装时选择ARM组件，输入许可证。安装后，打开Keil，检查是否能新建项目。
   
-  ![](C:\Users\lpg01\AppData\Roaming\marktext\images\2025-12-15-19-05-12-image.png)
+  ![](./images/2025-12-15-19-05-12-image.png)
   
-  ![](C:\Users\lpg01\AppData\Roaming\marktext\images\2025-12-15-19-06-30-image.png)
+  ![](./images/2025-12-15-19-06-30-image.png)
   
   不过由于我们只是学习stm32，所以我们使用学习版（也就是盗版）也问题不大。安装软件可以参考江协科技的视频[STM32入门教程-2023版 细致讲解 中文字幕_哔哩哔哩_bilibili](https://www.bilibili.com/video/BV1th411z7sn)
 
 - #### 2.2 安装"芯片图形配置器"（STM32CubeMX）
   
-  ![](C:\Users\lpg01\AppData\Roaming\marktext\images\2025-12-15-19-07-30-image.png)
+  ![](./images/2025-12-15-19-07-30-image.png)
   
-  ![](C:\Users\lpg01\AppData\Roaming\marktext\images\2025-12-15-19-08-47-image.png)
+  ![](./images/2025-12-15-19-08-47-image.png)
   
   STM32CubeMX是ST的免费工具，用于图形化配置引脚、时钟、外设。下载官网版本，安装Java运行环境（如果提示）。打开后，选择STM32F103C8T6芯片。
   
@@ -80,37 +80,37 @@
   
   打开CubeMX，点击上方的File，点击New Project
   
-  ![](C:\Users\lpg01\AppData\Roaming\marktext\images\2025-12-15-19-11-56-image.png)
+  ![](./images/2025-12-15-19-11-56-image.png)
   
   选择/在左上角搜索STM32F103C8T6
   
-  ![](C:\Users\lpg01\AppData\Roaming\marktext\images\2025-12-15-19-12-44-image.png)
+  ![](./images/2025-12-15-19-12-44-image.png)
   
   可以点击`★`来方便下次新建项目时选择
   
-  ![](C:\Users\lpg01\AppData\Roaming\marktext\images\2025-12-15-19-13-41-image.png)
+  ![](./images/2025-12-15-19-13-41-image.png)
   
   然后我们点击右上角的Start Project。
   
   稍等一会，就能来到引脚设置界面：
   
-  ![](C:\Users\lpg01\AppData\Roaming\marktext\images\2025-12-15-19-15-19-image.png)
+  ![](./images/2025-12-15-19-15-19-image.png)
   
   我们先点击左侧的System Core，然后点下面弹出的SYS，在右侧弹出的界面的Debug栏选为Serial Wire
   
-  ![](C:\Users\lpg01\AppData\Roaming\marktext\images\2025-12-15-19-17-39-image.png)
+  ![](./images/2025-12-15-19-17-39-image.png)
   
   然后我们点击左侧的RCC，在右侧弹出的界面找到High Speed Colck (HSE)，将其选为晶振
   
-  ![](C:\Users\lpg01\AppData\Roaming\marktext\images\2025-12-15-19-19-37-image.png)
+  ![](./images/2025-12-15-19-19-37-image.png)
   
   然后我们在上方找到Clock Configuration，设置系统时钟（HCLK）为72MHz，然后按一下回车，会弹出这个窗口，问我们要不要切换到其他时钟源
   
-  ![](C:\Users\lpg01\AppData\Roaming\marktext\images\2025-12-15-19-22-21-image.png)
+  ![](./images/2025-12-15-19-22-21-image.png)
   
   我们点OK，稍后他自己就配置完成了，如图
   
-  ![](C:\Users\lpg01\AppData\Roaming\marktext\images\2025-12-15-19-23-28-image.png)
+  ![](./images/2025-12-15-19-23-28-image.png)
   
   然后我们点上方的Project Manager
   
@@ -122,23 +122,23 @@
   
   - 在 Toolchain / IDE 选择 MDK-ARM，MDK-ARM在这里指的就是keil
   
-  ![](C:\Users\lpg01\AppData\Roaming\marktext\images\2025-12-15-19-33-43-image.png)
+  ![](./images/2025-12-15-19-33-43-image.png)
   
   然后我们点左侧的Code Generater
   
   在Generated Files栏，我们勾选上“为每个外设生成一对'.c/.h'文件”
   
-  ![](C:\Users\lpg01\AppData\Roaming\marktext\images\2025-12-15-19-35-50-image.png)
+  ![](./images/2025-12-15-19-35-50-image.png)
   
   然后我们点右上角的GENERATE CODE，稍等一会会弹出一个弹窗
   
-  ![](C:\Users\lpg01\AppData\Roaming\marktext\images\2025-12-15-19-38-15-image.png)
+  ![](./images/2025-12-15-19-38-15-image.png)
   
   意思是代码已经生成完成了，我们点Open Folder
   
   可以看到大致的目录结构：
   
-  ![](C:\Users\lpg01\AppData\Roaming\marktext\images\2025-12-15-19-44-24-image.png)
+  ![](./images/2025-12-15-19-44-24-image.png)
   
   ```md
   LED_Project                  项目根目录
@@ -171,11 +171,11 @@
   
   - **浮空输入**：引脚处于高阻抗状态，芯片内部不连接上拉或下拉电阻，完全由外部电路决定其电压。必须外部有明确的上拉或下拉电阻来确定默认状态，否则电平会不确定。
   
-  ![](C:\Users\lpg01\AppData\Roaming\marktext\images\2025-12-15-15-45-37-image.png)
+  ![](./images/2025-12-15-15-45-37-image.png)
   
   参考引脚说明和原理图，RGB LED蓝色用`PA6`。在CubeMX里，直接点击芯片图标的`PA6`引脚，选择为GPIO_Output。
   
-  ![](C:\Users\lpg01\AppData\Roaming\marktext\images\2025-12-15-20-35-44-image.png)
+  ![](./images/2025-12-15-20-35-44-image.png)
   
   别忘记先保存（按一下ctrl+s），然后点击右上角GENERATE CODE重新生成一下代码
 
@@ -187,11 +187,11 @@
   
   现在，我们终于要写代码了！打开Keil工程，双击左侧Project窗口中的 **main.c** 文件（通常在Application/User/Core文件夹下）
   
-  ![](C:\Users\lpg01\AppData\Roaming\marktext\images\2025-12-15-20-08-42-image.png)
+  ![](./images/2025-12-15-20-08-42-image.png)
   
   找到 main() 函数 `int main(void)`
   
-  ![](C:\Users\lpg01\AppData\Roaming\marktext\images\2025-12-15-20-10-50-image.png)
+  ![](./images/2025-12-15-20-10-50-image.png)
   
   main() 函数的**大致**结构是这样的（CubeMX自动生成，不一定一摸一样）：
   
@@ -248,7 +248,7 @@
   
   现在，我们要在`主循环`循环里面添加代码，让蓝色LED亮起。
   
-  ![](C:\Users\lpg01\AppData\Roaming\marktext\images\2025-12-15-15-45-37-image.png)
+  ![](./images/2025-12-15-15-45-37-image.png)
   
   根据学习板引脚功能说明和学习板电路原理图：
   
@@ -489,7 +489,7 @@
   
   我们观察一下原理图：两个按键分别连接`PB12`和`PB13`
   
-  ![](C:\Users\lpg01\AppData\Roaming\marktext\images\2025-12-15-20-26-46-image.png)
+  ![](./images/2025-12-15-20-26-46-image.png)
   
   我们先忽略按键并联的电容，可以看到`KEY1`左侧连接`PB12`和一个10KΩ的电阻，电阻另一端连接3.3V。这样
   
@@ -513,7 +513,7 @@
   
   我们先使用`KEY1`，所以我们在CubeMX界面点击芯片图标的PB12引脚，选择GPIO_Input
   
-  ![](C:\Users\lpg01\AppData\Roaming\marktext\images\2025-12-15-20-42-41-image.png)
+  ![](./images/2025-12-15-20-42-41-image.png)
   
   然后按ctrl+s，并重新生成代码。
 
@@ -575,21 +575,21 @@
   
   点击PB13，选择GPIO_Input
   
-  ![](C:\Users\lpg01\AppData\Roaming\marktext\images\2025-12-17-17-33-33-image.png)
+  ![](./images/2025-12-17-17-33-33-image.png)
   
   然后点击左侧的System Core，选择展开的GPIO，可以看到右侧弹出的窗口下方有各个启用了GPIO功能的引脚和相关配置：
   
-  ![](C:\Users\lpg01\AppData\Roaming\marktext\images\2025-12-17-17-36-15-image.png)
+  ![](./images/2025-12-17-17-36-15-image.png)
   
   我们点一下下方的PB13，会弹出一个详细的配置窗口：
   
-  ![](C:\Users\lpg01\AppData\Roaming\marktext\images\2025-12-17-17-37-40-image.png)
+  ![](./images/2025-12-17-17-37-40-image.png)
   
   可以看到，GPIO Pull-up/Pull-down那一栏当前为No pull-up and no pull-down，意思是当前没有内部上拉和内部下拉，也就是浮空输入模式。
   
   所以我们只需要在GPIO Pull-up/Pull-down那一栏，选择Pull-up即可启用内部上拉模式
   
-  ![](C:\Users\lpg01\AppData\Roaming\marktext\images\2025-12-17-17-41-37-image.png)
+  ![](./images/2025-12-17-17-41-37-image.png)
   
   然后保存并重新生成代码，将上面的代码中的`GPIO_PIN_12`改为`GPIO_PIN_13`：
   
@@ -921,15 +921,15 @@
   
   我们打开CubeMX，设置`PB12`为GPIO_EXTI12：
   
-  ![](C:\Users\lpg01\AppData\Roaming\marktext\images\2025-12-17-20-49-35-image.png)
+  ![](./images/2025-12-17-20-49-35-image.png)
   
   然后同样在左侧的System Core - GPIO里找到并点击PB12：
   
-  ![](C:\Users\lpg01\AppData\Roaming\marktext\images\2025-12-17-20-50-57-image.png)
+  ![](./images/2025-12-17-20-50-57-image.png)
   
   我们展开（点一下）GPIO mode的下拉框：
   
-  ![](C:\Users\lpg01\AppData\Roaming\marktext\images\2025-12-17-20-52-26-image.png)
+  ![](./images/2025-12-17-20-52-26-image.png)
   
   其中，前三个与中断有关
   
@@ -944,16 +944,16 @@
   然后我们在左侧的System Core里找到并点一下NVIC，在右侧弹出窗口里找到
   EXTI line[15:10] interrupts，在Enabled栏勾选上：
   
-  ![](C:\Users\lpg01\AppData\Roaming\marktext\images\2025-12-17-21-09-05-image.png)
+  ![](./images/2025-12-17-21-09-05-image.png)
   
   保存并重新生成代码，打开keil，在左侧双击stm32f1xx_it.c
   
-  ![](C:\Users\lpg01\AppData\Roaming\marktext\images\2025-12-17-21-23-34-image.png)
+  ![](./images/2025-12-17-21-23-34-image.png)
   
   在该文件的最底部，CubeMX自动帮我们生成了一个函数
   `void EXTI15_10_IRQHandler(void)`：
   
-  ![](C:\Users\lpg01\AppData\Roaming\marktext\images\2025-12-17-21-24-53-image.png)
+  ![](./images/2025-12-17-21-24-53-image.png)
   
   这就是我们刚刚配置的中断回调函数。
 
@@ -995,7 +995,7 @@
   
   想要解决，我们只需要回到CubeMX，进入System Core - NVIC，将我们的EXTI line[15:10] interrupts的优先级设为最高（15），同时将Time base: System tick timer的优先级设为一个比咱们的外部中断更低的数字即可
   
-  ![](C:\Users\lpg01\AppData\Roaming\marktext\images\2025-12-17-21-51-34-image.png)
+  ![](./images/2025-12-17-21-51-34-image.png)
   
   保存并生成代码，回到keil，编译下载，正常运行！
   
@@ -1031,7 +1031,7 @@
   
   串口是嵌入式领域最常用的通信方式。常见的串口有：RS-232，RS-485
   
-  ![](C:\Users\lpg01\AppData\Roaming\marktext\images\2025-12-18-08-10-55-image.png)
+  ![](./images/2025-12-18-08-10-55-image.png)
   
   甚至更常见的RJ-45（网线接口），USB接口也都是串口。
   
@@ -1051,7 +1051,7 @@
   
   打开CubeMX，File - New Project，点一下弹出窗口左上角的★可以看到我们已经收藏的STM32F103C8T6
   
-  ![](C:\Users\lpg01\AppData\Roaming\marktext\images\2025-12-18-13-52-41-image.png)
+  ![](./images/2025-12-18-13-52-41-image.png)
   
   选择它，然后点右上角的Start Project
   
@@ -1080,19 +1080,19 @@
   
   我们在引脚功能说明里可以看到，学习版上的type-c接口的TX（Transmit，发送）与RX（Receive，接收）分别连接PA2和PA3，它们都属于USART2
   
-  ![](C:\Users\lpg01\AppData\Roaming\marktext\images\2025-12-19-11-06-32-image.png)
+  ![](./images/2025-12-19-11-06-32-image.png)
   
   这里的USART是Universal Synchronous / Asynchronous Receiver & Transmitter，即通用同步/异步接收器和发送器，我们用的TTL串口用的就是其中的Asynchronous（异步）也就是UART
   
   我们打开CubeMX，点左侧的Connectivity，可以看到有三个USART，我们选择USART2，设置模式为Asynchronous
   
-  ![](C:\Users\lpg01\AppData\Roaming\marktext\images\2025-12-19-11-13-22-image.png)
+  ![](./images/2025-12-19-11-13-22-image.png)
   
   可以看到右侧PA2与PA3都正确设置了
   
   在下方的参数中，需要注意Baud Rate（波特率）这一行
   
-  ![](C:\Users\lpg01\AppData\Roaming\marktext\images\2025-12-19-11-14-44-image.png)
+  ![](./images/2025-12-19-11-14-44-image.png)
   
   是指每秒传输的码元数量，即每秒有多少次高低电平的变化
   
@@ -1213,7 +1213,7 @@
     
     通常我们需要一个USB转TTL串口的模块，直接与stm32连接，但是学习版上已经集成了一个USB转TTL芯片，可以在原理图上找到
     
-    ![](C:\Users\lpg01\AppData\Roaming\marktext\images\2025-12-19-11-44-14-image.png)
+    ![](./images/2025-12-19-11-44-14-image.png)
     
     看不懂没关系，根据引脚功能说明，学习版使用一个usb type-c接口作为串口连接，所以我们只需要拿出一根type-c的数据线，将学习版与电脑连接即可
   
@@ -1312,3 +1312,4 @@
 - #### D. **开发板原理图导读**：教你看懂原理图，找到关键元件
 
 - #### E. **下一步学什么**：FreeRTOS，PCB设计，其他STM32系列推荐，ESP32与物联网
+
